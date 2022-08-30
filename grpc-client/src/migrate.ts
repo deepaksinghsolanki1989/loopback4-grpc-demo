@@ -1,10 +1,10 @@
-import {GrpcTestClientApplication} from './application';
+import {GrpcClientApplication} from './application';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
   console.log('Migrating schemas (%s existing schema)', existingSchema);
 
-  const app = new GrpcTestClientApplication();
+  const app = new GrpcClientApplication();
   await app.boot();
   await app.migrateSchema({existingSchema});
 

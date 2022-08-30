@@ -1,9 +1,9 @@
-import {ApplicationConfig, GrpcTestClientApplication} from './application';
+import {ApplicationConfig, GrpcClientApplication} from './application';
 
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new GrpcTestClientApplication(options);
+  const app = new GrpcClientApplication(options);
   await app.boot();
   await app.start();
 

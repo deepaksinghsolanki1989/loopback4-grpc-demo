@@ -1,9 +1,9 @@
 import {Client} from '@loopback/testlab';
-import {GrpcTestClientApplication} from '../..';
+import {GrpcClientApplication} from '../..';
 import {setupApplication} from './test-helper';
 
 describe('HomePage', () => {
-  let app: GrpcTestClientApplication;
+  let app: GrpcClientApplication;
   let client: Client;
 
   before('setupApplication', async () => {

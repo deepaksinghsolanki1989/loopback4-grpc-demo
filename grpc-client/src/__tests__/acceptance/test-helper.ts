@@ -1,4 +1,4 @@
-import {GrpcTestClientApplication} from '../..';
+import {GrpcClientApplication} from '../..';
 import {
   createRestAppClient,
   givenHttpServerConfig,
@@ -14,7 +14,7 @@ export async function setupApplication(): Promise<AppWithClient> {
     // port: +process.env.PORT,
   });
 
-  const app = new GrpcTestClientApplication({
+  const app = new GrpcClientApplication({
     rest: restConfig,
   });
 
@@ -27,6 +27,6 @@ export async function setupApplication(): Promise<AppWithClient> {
 }
 
 export interface AppWithClient {
-  app: GrpcTestClientApplication;
+  app: GrpcClientApplication;
   client: Client;
 }
