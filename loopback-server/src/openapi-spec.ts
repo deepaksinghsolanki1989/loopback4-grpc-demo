@@ -1,5 +1,5 @@
 import {ApplicationConfig} from '@loopback/core';
-import {GrpcServerApplication} from './application';
+import {LoopbackServerApplication} from './application';
 
 /**
  * Export the OpenAPI spec from the application
@@ -7,12 +7,12 @@ import {GrpcServerApplication} from './application';
 async function exportOpenApiSpec(): Promise<void> {
   const config: ApplicationConfig = {
     rest: {
-      port: +(process.env.PORT ?? 4000),
+      port: +(process.env.PORT ?? 3000),
       host: process.env.HOST ?? 'localhost',
     },
   };
   const outFile = process.argv[2] ?? '';
-  const app = new GrpcServerApplication(config);
+  const app = new LoopbackServerApplication(config);
   await app.boot();
   await app.exportOpenApiSpec(outFile);
 }
