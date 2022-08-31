@@ -1,7 +1,5 @@
-import {Application} from '@loopback/core';
-import {GrpcComponent} from '@loopback/grpc';
-import {GreeterController} from './controllers';
 import {ApplicationConfig, GrpcServerApplication} from './application';
+
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
@@ -12,19 +10,6 @@ export async function main(options: ApplicationConfig = {}) {
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);
   console.log(`Try ${url}/ping`);
-
-  // Pass the optional configurations
-  const grpcApp = new Application({
-    grpc: {
-      port: 4001,
-    },
-  });
-  // Add Grpc as Component
-  grpcApp.component(GrpcComponent);
-  // Bind GreeterCtrl to the LoopBack Application
-  grpcApp.controller(GreeterController);
-  // Start App
-  grpcApp.start();
 
   return app;
 }
