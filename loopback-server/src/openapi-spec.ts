@@ -1,5 +1,5 @@
 import {ApplicationConfig} from '@loopback/core';
-import {LoopbackServerApplication} from './application';
+import {RestServerApplication as LoopbackServerApplication} from './server/rest';
 
 /**
  * Export the OpenAPI spec from the application

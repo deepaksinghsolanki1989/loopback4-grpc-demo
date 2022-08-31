@@ -15,7 +15,7 @@ export class GreeterController {
       'application/json': {
         schema: {
           type: 'object',
-          title: 'HelloWorldResponse',
+          title: 'GreeterResponse',
           properties: {
             message: {type: 'string'},
           },

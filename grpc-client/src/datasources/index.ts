@@ -1,1 +1,1 @@
-export * from './hello-world.datasource';
+export * from './greeter.datasource';

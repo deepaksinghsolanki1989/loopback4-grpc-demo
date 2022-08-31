@@ -1,4 +1,4 @@
-import {LoopbackServerApplication} from './application';
+import {RestServerApplication as LoopbackServerApplication} from './server/rest';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
